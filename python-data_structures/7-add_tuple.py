@@ -8,5 +8,5 @@ def add_tuple(tuple_a=(), tuple_b=()):
     if len(list_b) < 2:
         for i in range(len(list_b), 2):
             list_b += [0]
-    ret = tuple(sum(x) for x in zip(list_a, list_b))
-    return (ret)
+    ret = [list_a[0] + list_b[0], list_a[1] + list_b[1]]
+    return (tuple(ret))

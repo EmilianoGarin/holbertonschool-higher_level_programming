@@ -7,19 +7,12 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        if size < 0:
+        if (size < 0):
             raise ValueError("size must be >= 0")
-
-        if not isinstance(position, tuple) or :
-            raise TypeError("position must be a tuple of 2 positive integers")
-
-        self.__position = position      
         self.__size = size
-
-
-
-    def area(self):
-        return (self.__size**2)
+        if not p_val(position):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = position
 
     @property
     def size(self):
@@ -35,19 +28,34 @@ class Square:
 
     @property
     def position(self):
-        return (__position)
+        return (self.__position)
+
+    @position.setter
+    def position(self, value):
+        if not p_val(value):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
+
+    def area(self):
+        return (self.__size**2)
 
     def my_print(self):
-        if self.size == 0:
+        if self.__size == 0:
             print()
         else:
-            for s in range(0, self.size):
-                for a in range(0, self.size):
+            for a in range(0, self.__position[1]):
+                print()
+            for s in range(0, self.__size):
+                for a in range(0, self.__position[0]):
+                    print(" ", end="")
+                for a in range(0, self.__size):
                     print("#", end="")
                 print()
 
-def p_int(tup):
-    if len(tup) == 2 and [tup[1], tup[0]] >= 0:
-        return (False)
-    return (True)
 
+def p_val(position):
+    if isinstance(position, tuple) and len(position) == 2:
+        if isinstance(position[0], int) and isinstance(position[1], int):
+            if position[1] >= 0 and position[0] >= 0:
+                return (True)
+    return (False)

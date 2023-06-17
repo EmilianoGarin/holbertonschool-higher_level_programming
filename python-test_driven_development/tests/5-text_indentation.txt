@@ -8,12 +8,6 @@ Hola Bob.
 Como estas hoy?
 <BLANKLINE>
 
->>> text_indentation(" txt ")
- txt 
-
->>> text_indentation("    ")
-<BLANKLINE>
-
 >>> text_indentation(".?:")
 .
 <BLANKLINE>

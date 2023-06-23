@@ -2,6 +2,10 @@
 
 >>> bg = BaseGeometry()
 
+>>> bg.integer_validator("", 12)
+
+>>> bg.integer_validator(347, 12)
+
 >>> bg.integer_validator("Alice", 12)
 
 >>> bg.integer_validator("Cheshire", "Cat")
@@ -12,9 +16,25 @@ TypeError: Cheshire must be an integer
 Traceback (most recent call last):
 TypeError: Mad Hatter must be an integer
 
+>>> bg.integer_validator("Wonderland", True)
+Traceback (most recent call last):
+TypeError: Wonderland must be an integer
+
+>>> bg.integer_validator("Dum and Dee", [1, 2])
+Traceback (most recent call last):
+TypeError: Dum and Dee must be an integer
+
+>>> bg.integer_validator("Bandersnatch", {"roar" : 3})
+Traceback (most recent call last):
+TypeError: Bandersnatch must be an integer
+
 >>> bg.integer_validator("White Rabbit", 0)
 Traceback (most recent call last):
 ValueError: White Rabbit must be greater than 0
+
+>>> bg.integer_validator("Jabberwocky", -999)
+Traceback (most recent call last):
+ValueError: Jabberwocky must be greater than 0
 
 >>> bg.integer_validator("Red Queen", None)
 Traceback (most recent call last):

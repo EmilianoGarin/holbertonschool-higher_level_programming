@@ -4,6 +4,6 @@ import json
 
 
 def to_json_string(my_obj):
-    """create a json"""
+    """Python to JSON"""
 
     return json.dumps(my_obj)

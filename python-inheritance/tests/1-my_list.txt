@@ -3,6 +3,8 @@
 >>> my_list = MyList([1, 2, 3, 4])
 >>> my_list.print_sorted()
 [1, 2, 3, 4]
+>>> pritn(my_list)
+[1, 2, 3, 4]
 
 >>> my_list = MyList([2, 3, 1, 4])
 >>> my_list.print_sorted()

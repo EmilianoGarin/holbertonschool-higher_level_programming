@@ -2,6 +2,10 @@
 
 >>> bg = BaseGeometry()
 
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
 >>> bg.integer_validator("", 12)
 
 >>> bg.integer_validator(347, 12)
@@ -20,7 +24,11 @@ TypeError: Mad Hatter must be an integer
 Traceback (most recent call last):
 TypeError: Wonderland must be an integer
 
->>> bg.integer_validator("Dum and Dee", [1, 2])
+>>> bg.integer_validator("Dum and Dee", [1, 1])
+Traceback (most recent call last):
+TypeError: Dum and Dee must be an integer
+
+>>> bg.integer_validator("Dum and Dee", (1, 1))
 Traceback (most recent call last):
 TypeError: Dum and Dee must be an integer
 

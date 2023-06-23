@@ -26,6 +26,10 @@
 >>> my_list.print_sorted()
 []
 
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
 >>> my_list = MyList([1, "Alice", "Cheshire"])
 >>> my_list.print_sorted()
 Traceback (most recent call last):

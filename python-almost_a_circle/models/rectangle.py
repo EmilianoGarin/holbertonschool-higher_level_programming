@@ -92,8 +92,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """retur a string with the Rectangle info"""
-        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} \
-- {self.__width}/{self.__height}")
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} \
+- {self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
         """update a Rectangle"""
@@ -123,3 +123,8 @@ class Rectangle(Base):
                     self.x = v
                 elif i == 4:
                     self.y = v
+
+    def to_dictionary(self):
+        """dictionary of the Rectangle"""
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}

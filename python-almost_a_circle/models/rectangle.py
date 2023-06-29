@@ -94,3 +94,18 @@ class Rectangle(Base):
         """retur a string with the Rectangle info"""
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} \
 - {self.__width}/{self.__height}")
+
+    def update(self, *args):
+        """update a Rectangle"""
+        for i, v in enumerate(args):
+            if i == 0:
+                if type(v) is not None:
+                    self.id = v
+            elif i == 1:
+                self.width = v
+            elif i == 2:
+                self.height = v
+            elif i == 3:
+                self.x = v
+            elif i == 4:
+                self.y = v

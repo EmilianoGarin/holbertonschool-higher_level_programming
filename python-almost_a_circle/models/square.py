@@ -23,6 +23,7 @@ class Square(Rectangle):
         Rectangle.height.fset(self, value)
 
     def update(self, *args, **kwargs):
+        """update a Rectangle"""
         if len(args) == 0:
             for i, v in kwargs.items():
                 if i == "id":

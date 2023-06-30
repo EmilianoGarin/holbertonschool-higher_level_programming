@@ -46,7 +46,20 @@ class Base():
         """create a Reactangle or Square"""
 
         dummy = cls(1, 1, 1)
-        if not dictionary or len(dictionary) == 0:
-            return dummy
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """load a list of form"""
+
+        try:
+            with open(f"{cls.__name__}.json", encoding="utf-8") as f:
+                ret = json.loads(f.read())
+        except FileNotFoundError:
+            ret = []
+        finally:
+            ret_ins = []
+            for x in ret:
+                ret_ins.append(cls.create(**x))
+            return ret_ins

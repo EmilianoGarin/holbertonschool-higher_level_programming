@@ -20,4 +20,4 @@ class Base():
 
         if list_dictionaries is None:
             return "[]"
-        return str(list_dictionaries)
+        return f"{list_dictionaries}"

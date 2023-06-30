@@ -46,5 +46,7 @@ class Base():
         """create a Reactangle or Square"""
 
         dummy = cls(1, 1, 1)
+        if not dictionary or len(dictionary) == 0:
+            return dummy
         dummy.update(**dictionary)
         return dummy

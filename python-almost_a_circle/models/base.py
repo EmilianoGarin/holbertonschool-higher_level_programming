@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """task 1"""
+import json
 
 
 class Base():
@@ -20,4 +21,4 @@ class Base():
 
         if list_dictionaries is None:
             return "[]"
-        return f"{list_dictionaries}"
+        return json.dumps(list_dictionaries)

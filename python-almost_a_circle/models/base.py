@@ -55,7 +55,7 @@ class Base():
 
         try:
             with open(f"{cls.__name__}.json", encoding="utf-8") as f:
-                ret = json.loads(f.read())
+                ret = cls.from_json_string(f.read())
         except FileNotFoundError:
             ret = []
         finally:

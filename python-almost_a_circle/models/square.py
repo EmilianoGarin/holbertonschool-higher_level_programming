@@ -46,3 +46,8 @@ class Square(Rectangle):
                     Rectangle.x.fset(self, v)
                 elif i == 3:
                     Rectangle.y.fset(self, v)
+
+    def to_dictionary(self):
+        """dictionary of the Square"""
+        return {'id': self.id, 'x': super().x, 'size': super().width,
+                'y': super().y}

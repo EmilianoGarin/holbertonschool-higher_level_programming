@@ -28,8 +28,8 @@ class Base():
         """save JSON in a file"""
 
         list_dictionaries = []
-        for x in list_objs:
-            list_dictionaries.append(x.to_dictionary())
+        for x in range(len(list_objs)):
+            list_dictionaries.append(list_objs[x].to_dictionary())
         with open(f"{cls.__name__}.json", "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_dictionaries))
 
@@ -45,7 +45,10 @@ class Base():
     def create(cls, **dictionary):
         """create a Reactangle or Square"""
 
-        dummy = cls(1, 1, 1)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        else:
+            dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
 

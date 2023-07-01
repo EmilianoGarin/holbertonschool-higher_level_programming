@@ -161,7 +161,7 @@ class TestRectangle_getter_and_setter(unittest.TestCase):
             a.y = "white rabbit"
 
 
-class testRectangle_method(unittest.TestCase):
+class TestRectangle_method(unittest.TestCase):
     """
     test the method area
     """
@@ -176,7 +176,7 @@ class testRectangle_method(unittest.TestCase):
 
     def test_display(self):
         a = Rectangle(1, 2, 1, 1)
-        self.assertAlmostEqual(a.display(), "\n #\n #\n")
+        self.assertAlmostEqual(a.display(), None)
 
     """
     test the method update

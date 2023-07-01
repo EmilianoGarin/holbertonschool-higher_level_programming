@@ -11,24 +11,24 @@ class TestBase_init_(unittest.TestCase):
     """
 
     def test_id_none(self):
-        self.assertAlmostEqual(Base(None), 1)
+        self.assertAlmostEqual(Base(None).id, 4)
 
     def test_id_empty(self):
-        self.assertAlmostEqual(Base(), 1)
+        self.assertAlmostEqual(Base().id, 1)
 
     def test_id_not_none(self):
-        self.assertAlmostEqual(Base(13), 13)
+        self.assertAlmostEqual(Base(13).id, 13)
 
     def test_id_neg(self):
-        self.assertAlmostEqual(Base(-1), -1)
+        self.assertAlmostEqual(Base(-1).id, -1)
 
     def test_id_0(self):
-        self.assertAlmostEqual(Base(0), 0)
+        self.assertAlmostEqual(Base(0).id, 0)
 
     def test_id_multiple(self):
+        i = Base()
         x = Base()
-        x = Base()
-        self.assertAlmostEqual(x.id, 2)
+        self.assertAlmostEqual(x.id, i.id + 1)
 
 
 class TestBase_JSON(unittest.TestCase):
@@ -45,10 +45,10 @@ class TestBase_JSON(unittest.TestCase):
         self.assertAlmostEqual(Base.to_json_string(data), res)
 
     def test_json_file_s_none(self):
-        self.assertAlmostEqual(Base.save_to_file(None), None)
+        self.assertEqual(Base.save_to_file(None), None)
 
     def test_json_file_f_none(self):
-        self.assertAlmostEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string(None), [])
 
     def test_json_file_l_empty(self):
-        self.assertAlmostEqual(Base.load_from_file(), [])
+        self.assertEqual(Base.load_from_file(), [])

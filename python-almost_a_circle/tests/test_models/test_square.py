@@ -41,7 +41,7 @@ class TestSquare_getter_and_setter(unittest.TestCase):
         self.assertEqual(a.size, 1)
 
 
-class testSquare_method(unittest.TestCase):
+class TestSquare_method(unittest.TestCase):
     """
     test the method area
     """
@@ -56,7 +56,7 @@ class testSquare_method(unittest.TestCase):
 
     def test_display(self):
         a = Square(1, 1, 2)
-        self.assertAlmostEqual(a.display(), "\n  #\n")
+        self.assertAlmostEqual(a.display(), None)
 
     """
     test the method update

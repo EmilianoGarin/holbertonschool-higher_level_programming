@@ -21,9 +21,10 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State)
-    result = query.filter(State.name.like(sys.argv[4]))
+    result = query.filter(State.name.like(sys.argv[4])).order_by(State.id)
 
     if result is None:
         print("Not found")
     else:
-        print(f"{result.id}")
+        for row in result:
+            print(f"{row.id}")

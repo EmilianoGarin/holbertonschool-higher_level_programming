@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""task 7:
-lists all State objects from the database hbtn_0e_6_usa
+"""task 8:
+prints the first State object from the database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
@@ -16,7 +16,6 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State)
-    result = query.all()
+    result = query.first()
 
-    for row in result:
-        print(f"{row.id}: {row.name}")
+    print(f"{result.id}: {result.name}")

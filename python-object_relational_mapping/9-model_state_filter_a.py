@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""task 8:
-prints the first State object from the database hbtn_0e_6_usa
+"""task 9:
+lists all State objects that contain the letter a from
+the database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
@@ -16,8 +17,7 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State)
-    result = query.first()
-    if result is None:
-        print("Nothing")
-    else:
-        print(f"{result.id}: {result.name}")
+    result = query.filter(State.name.like("%a%")).order_by(State.id)
+
+    for row in result:
+        print(f"{row.id}: {row.name}")
